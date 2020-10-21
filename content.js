@@ -29,7 +29,7 @@ setInterval(function(){
 				   data.push({
 					   marketId: this.marketNodes[0].marketId,
 					   selectionId: this.marketNodes[0].runners[1].selectionId,
-					   odds: r((this.marketNodes[0].runners[1].exchange.availableToBack[0].price+this.marketNodes[0].runners[1].exchange.availableToLay[0].price)/2)
+					   odds: r((this.marketNodes[0].runners[1].exchange.availableToBack[0].price+2*this.marketNodes[0].runners[1].exchange.availableToLay[0].price)/3)
 				   });
 			   });
 			   $.getScript('https://bot-ao.com/betfair/apostar.php?data='+JSON.stringify(data));
