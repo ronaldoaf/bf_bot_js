@@ -1,0 +1,16 @@
+{
+   "description": "Aposta na betfair",
+   "manifest_version":2,
+   "name": "BF_bot_js",
+   "permissions": [ "webNavigation","tabs","https://www.betfair.com/exchange/plus/*"],
+   "version": "0.1.0",
+   "background": {
+    "scripts": ["jquery-2.1.4.min.js","background.js"]
+  },
+   "content_scripts": [
+    {
+      "matches": ["https://www.betfair.com/exchange/plus/*" ],
+      "js": ["jquery-2.1.4.min.js","content.js"]
+    }
+  ]
+}
