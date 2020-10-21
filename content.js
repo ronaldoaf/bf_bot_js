@@ -2,14 +2,23 @@ function r(num){
 	return (Math.round(num*100)/100+0.02).toFixed(2);
 }
 
-setInterval(function(){
-	//login
+function login(){
 	if($('.ssc-lifg').size()) {
 		$('#ssc-liu').val(localStorage.bf_user);
 		$('#ssc-lipw').val(localStorage.bf_pass);
 		$('#ssc-lis').click();
-	}
+	}	
 	
+}
+
+$(function(){
+	login();
+	
+});
+
+setInterval(function(){
+
+	login();
 	
 	$.getScript('https://bot-ao.com/betfair/ids.php',function(){
 		var ids=[];
