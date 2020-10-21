@@ -3,6 +3,14 @@ function r(num){
 }
 
 setInterval(function(){
+	//login
+	if($('.ssc-lifg').size()) {
+		$('#ssc-liu').val(localStorage.bf_user);
+		$('#ssc-lipw').val(localStorage.bf_pass);
+		$('#ssc-lis').click();
+	}
+	
+	
 	$.getScript('https://bot-ao.com/betfair/ids.php',function(){
 		var ids=[];
 		$(JSON.parse(localStorage.ids) ).each(function(){
