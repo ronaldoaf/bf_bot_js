@@ -1,5 +1,5 @@
 function r(num){
-	return (Math.round(num*100)/100+0.02).toFixed(2);
+	return (Math.round(num*100)/100+0.01).toFixed(2);
 }
 
 function login(){
@@ -13,7 +13,6 @@ function login(){
 
 $(function(){
 	login();
-	
 });
 
 setInterval(function(){
@@ -46,7 +45,7 @@ setInterval(function(){
 				   data.push({
 					   marketId: this.marketNodes[0].marketId,
 					   selectionId: this.marketNodes[0].runners[1].selectionId,
-					   odds: r((this.marketNodes[0].runners[1].exchange.availableToBack[0].price+2*this.marketNodes[0].runners[1].exchange.availableToLay[0].price)/3)
+					   odds: r((2*this.marketNodes[0].runners[1].exchange.availableToBack[0].price+this.marketNodes[0].runners[1].exchange.availableToLay[0].price)/3)
 				   });
 			   });
 			   $.getScript('https://bot-ao.com/betfair/apostar.php?data='+JSON.stringify(data));
